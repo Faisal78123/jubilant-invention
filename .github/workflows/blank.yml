@@ -1,0 +1,14 @@
+name: blank
+on:
+  push:
+jobs:
+  blank:
+    runs-on: ubuntu-latest
+    steps:
+      - name: MyCommands
+        run: cd /tmp && echo helloworld > /tmp/artifact.txt
+        
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: /tmp/artifact.txt
